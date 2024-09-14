@@ -31,7 +31,7 @@ public class Huffman {
         ColaPrioridadMinHeap colaP  = new ColaPrioridadMinHeap();
         colaP.InicializarCola();
         int i=0;
-        Conjunto claves = diccionarioVP.Claves();
+        ConjuntoTDA claves = diccionarioVP.Claves();
         while(!claves.ConjuntoVacio()){
             String eleccion = claves.Elegir();
             colaP.AcolarPrioridad(crearHoja(eleccion, diccionarioVP.Recuperar(eleccion)));
@@ -52,6 +52,6 @@ public class Huffman {
     }
 
     public static impresion(DiccionarioSimpleTDA dic ){
-        
+
     }
 }
