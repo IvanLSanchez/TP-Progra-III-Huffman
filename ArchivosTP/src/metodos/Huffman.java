@@ -1,8 +1,10 @@
 package metodos;
-import impl.ColaPrioridadMinHeap;
+
+import impl.MinHeap;
 import impl.NodoHuffman;
 import api.ConjuntoTDA;
 import api.DiccionarioSimpleTDA;
+import api.HeapTDA;
 
 public class Huffman {
     public static NodoHuffman crearHoja(String x, float prioridad){
@@ -24,26 +26,27 @@ public class Huffman {
     }
     
     public static NodoHuffman crearArbol(DiccionarioSimpleTDA diccionarioVP){
-        ColaPrioridadMinHeap colaP  = new ColaPrioridadMinHeap();
-        colaP.InicializarCola();
+        HeapTDA heap = new MinHeap();
+        heap.InicializarHeap();
+
         int i=0;
         ConjuntoTDA claves = diccionarioVP.Claves();
         while(!claves.ConjuntoVacio()){
             String eleccion = claves.Elegir();
-            colaP.AcolarPrioridad(crearHoja(eleccion, diccionarioVP.Recuperar(eleccion)));
+            heap.Agregar(crearHoja(eleccion, diccionarioVP.Recuperar(eleccion)));
             claves.Sacar(eleccion);
             i++;
         }
         
         for (int j = 0; j < i-1; j++) {
-            NodoHuffman x1 = colaP.Primero();
-            colaP.Desacolar();
-            NodoHuffman x2 = colaP.Primero();
-            colaP.Desacolar();
+            NodoHuffman x1 = heap.Primero();
+            heap.Sacar();
+            NodoHuffman x2 = heap.Primero();
+            heap.Sacar();
 
-            colaP.AcolarPrioridad(fusionNodoHuffman(x1, x2));
+            heap.Agregar(fusionNodoHuffman(x1, x2));
         }
             
-        return colaP.Primero();
+        return heap.Primero();
     }
 }
