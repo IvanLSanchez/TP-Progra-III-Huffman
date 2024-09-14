@@ -1,5 +1,4 @@
 import api.DiccionarioSimpleTDA;
-import impl.ColaPrioridadMinHeap;
 import impl.NodoHuffman;
 import metodos.Huffman;
 import impl.DiccionarioSimple;
@@ -16,6 +15,8 @@ public class App {
         dic.Agregar("F", 5);
 
         NodoHuffman muestra = Huffman.crearArbol(dic);
+
+
 
 
         }
