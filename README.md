@@ -11,4 +11,4 @@ Elaborar un codigo capaz de crear arboles de Huffman.
 
 ## Consideraciones que se hicieron en el proyecto
 - Se creo un nodo Huffman. El mismo esta derivado del nodo de un ABB pero agregando el atributo de probabilidad
-- Los TDA (heap y cola prioridad) se hizo para que los elementos que se controlen sean nodos de Huffman
+- El TDA heap se adapto para que controle nodos de Huffman

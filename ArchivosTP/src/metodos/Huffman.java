@@ -24,7 +24,6 @@ public class Huffman {
     }
     
     public static NodoHuffman crearArbol(DiccionarioSimpleTDA diccionarioVP){
-
         ColaPrioridadMinHeap colaP  = new ColaPrioridadMinHeap();
         colaP.InicializarCola();
         int i=0;
