@@ -3,7 +3,7 @@ package impl;
 import api.ConjuntoTDA;
 
 public class Conjunto implements ConjuntoTDA {
-    int[] a;
+    String[] a;
     int cant;
 
     public void Agregar(String x) {
@@ -17,18 +17,18 @@ public class Conjunto implements ConjuntoTDA {
         return cant == 0;
     }
 
-    public int Elegir() {
+    public String Elegir() {
         return a[cant - 1];
     }
 
     public void InicializarConjunto() {
-        a = new int[100];
+        a = new String[100];
         cant = 0;
     }
 
     public boolean Pertenece(String x) {
         int i = 0;
-        while (i < cant && a[i] != x) {
+        while (i < cant && !(a[i].equals(x))) {
             i++;
         }
         return (i < cant);
@@ -36,7 +36,7 @@ public class Conjunto implements ConjuntoTDA {
 
     public void Sacar(String x) {
         int i = 0;
-        while (i < cant && a[i] != x) {
+        while (i < cant && !(a[i].equals(x))){
             i++;
         }
         if (i < cant) {
@@ -44,5 +44,4 @@ public class Conjunto implements ConjuntoTDA {
             cant--;
         }
     }
-
 }
