@@ -3,14 +3,39 @@ import impl.ColaPrioridadMinHeap;
 import impl.NodoHuffman;
 import impl.VP;
 
+import java.util.Dictionary;
+
 public class Huffman {
-    public static void crearArbol(ConjuntoTDA conjuntoNodos){
+    public static NodoHuffman fusionNodoHuffman (NodoHuffman x, NodoHuffman y){
+        NodoHuffman aux = new NodoHuffman();
+        aux.hijoIzq = x;
+        aux.hijoDer = y;
+        aux.info = x.info + y.info;
+        aux.probabilidad = x.probabilidad + y.probabilidad;
+        return aux;
+    }
+    
+    public static void crearArbol(DiccionarioSimpleTDA diccionarioVP){
         ColaPrioridadMinHeap colaP  = new ColaPrioridadMinHeap();
         colaP.InicializarCola();
-
-        while(!conjuntoNodos.ConjuntoVacio){
-            colaP.AcolarPrioridad(conjuntoNodos.);
-            conjuntoNodos
+        int i=0;
+        ConjuntoTDA claves = diccionarioVP.Claves(); 
+        while(!claves.ConjuntoVacio()){
+            String eleccion = claves.Elegir();
+            colaP.AcolarPrioridad(eleccion, diccionarioVP.Recuperar(eleccion));
+            claves.Sacar(eleccion);
+            i++;
         }
+        
+        for (int j = 0; j < i-1; j++) {
+            NodoHuffman x1 = colaP.Primero();
+            colaP.Desacolar();
+            NodoHuffman x2 = colaP.Primero();
+            colaP.Desacolar();
+
+
+        }
+            
+        
     }
 }

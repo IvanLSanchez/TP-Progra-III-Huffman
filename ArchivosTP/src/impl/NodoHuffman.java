@@ -1,8 +1,8 @@
 package impl;
 
 public class NodoHuffman {
-    String info;
-    float probabilidad;
-    NodoHuffman hijoIzq;
-    NodoHuffman hijoDer;
+    public String info;
+    public float probabilidad;
+    public NodoHuffman hijoIzq;
+    public NodoHuffman hijoDer;
 }
