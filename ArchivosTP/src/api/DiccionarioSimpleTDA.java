@@ -1,11 +1,9 @@
 package api;
 
-import impl.NodoHuffman;
-
 public interface DiccionarioSimpleTDA {
     void InicializarDiccionario();
-    void Agregar(int clave, int valor);
-    void Eliminar(int clave);
-    int Recuperar(int clave);
+    void Agregar(String clave, float valor);
+    void Eliminar(String clave);
+    float Recuperar(String clave);
     ConjuntoTDA Claves();
 }

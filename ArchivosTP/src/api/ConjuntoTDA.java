@@ -1,13 +1,11 @@
 package api;
 
-import impl.NodoHuffman;
-
 public interface ConjuntoTDA {
     void InicializarConjunto();
     boolean ConjuntoVacio();
-    void Agregar(int x);
+    void Agregar(String x);
     int Elegir();
-    void Sacar(int x);
-    boolean Pertenece(int x);
+    void Sacar(String x);
+    boolean Pertenece(String x);
     ///a
 }
