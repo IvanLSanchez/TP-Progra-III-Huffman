@@ -50,8 +50,4 @@ public class Huffman {
             
         return colaP.Primero();
     }
-
-    public static impresion(DiccionarioSimpleTDA dic ){
-
-    }
 }
