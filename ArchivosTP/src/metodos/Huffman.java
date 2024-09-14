@@ -5,6 +5,7 @@ import impl.VP;
 
 import java.util.Dictionary;
 
+import api.DiccionarioSimpleTDA;
 import impl.Conjunto;
 import impl.DiccionarioSimple;
 
@@ -48,5 +49,9 @@ public class Huffman {
         }
             
         return colaP.Primero();
+    }
+
+    public static impresion(DiccionarioSimpleTDA dic ){
+        
     }
 }
