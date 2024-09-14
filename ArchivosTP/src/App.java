@@ -1,5 +1,4 @@
 import api.DiccionarioSimpleTDA;
-import impl.ColaPrioridadMinHeap;
 import impl.NodoHuffman;
 import metodos.Huffman;
 import impl.DiccionarioSimple;
