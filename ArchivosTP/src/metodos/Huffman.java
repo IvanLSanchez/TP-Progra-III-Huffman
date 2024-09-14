@@ -5,7 +5,17 @@ import impl.VP;
 
 import java.util.Dictionary;
 
+import api.ConjuntoTDA;
+import api.DiccionarioSimpleTDA;
+
 public class Huffman {
+    public static NodoHuffman crearHoja(String x, float prioridad){
+        NodoHuffman elemento = new NodoHuffman();
+        elemento.probabilidad = prioridad;
+        elemento.info = x;
+        return elemento
+    }
+
     public static NodoHuffman fusionNodoHuffman (NodoHuffman x, NodoHuffman y){
         NodoHuffman aux = new NodoHuffman();
         aux.hijoIzq = x;
@@ -22,7 +32,7 @@ public class Huffman {
         ConjuntoTDA claves = diccionarioVP.Claves(); 
         while(!claves.ConjuntoVacio()){
             String eleccion = claves.Elegir();
-            colaP.AcolarPrioridad(eleccion, diccionarioVP.Recuperar(eleccion));
+            colaP.AcolarPrioridad(crearHoja(eleccion, diccionarioVP.Recuperar(eleccion)));
             claves.Sacar(eleccion);
             i++;
         }

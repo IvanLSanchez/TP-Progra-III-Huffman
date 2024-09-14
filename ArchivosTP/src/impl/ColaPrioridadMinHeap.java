@@ -16,11 +16,8 @@ public class ColaPrioridadMinHeap implements ColaPrioridadTDA{
     }
 
     
-    public void AcolarPrioridad(String x, int prioridad) {
-       NodoHuffman elemento = new NodoHuffman();
-       elemento.probabilidad = prioridad;
-       elemento.info = x;
-       heap.Agregar(elemento);
+    public void AcolarPrioridad(NodoHuffman arbol) {
+       heap.Agregar(arbol);
     }
 
     
