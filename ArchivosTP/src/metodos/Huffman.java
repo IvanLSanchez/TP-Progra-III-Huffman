@@ -5,8 +5,8 @@ import impl.VP;
 
 import java.util.Dictionary;
 
-import api.ConjuntoTDA;
-import api.DiccionarioSimpleTDA;
+import impl.Conjunto;
+import impl.DiccionarioSimple;
 
 public class Huffman {
     public static NodoHuffman crearHoja(String x, float prioridad){
@@ -26,10 +26,11 @@ public class Huffman {
     }
     
     public static NodoHuffman crearArbol(DiccionarioSimpleTDA diccionarioVP){
+
         ColaPrioridadMinHeap colaP  = new ColaPrioridadMinHeap();
         colaP.InicializarCola();
         int i=0;
-        ConjuntoTDA claves = diccionarioVP.Claves(); 
+        Conjunto claves = diccionarioVP.Claves();
         while(!claves.ConjuntoVacio()){
             String eleccion = claves.Elegir();
             colaP.AcolarPrioridad(crearHoja(eleccion, diccionarioVP.Recuperar(eleccion)));
