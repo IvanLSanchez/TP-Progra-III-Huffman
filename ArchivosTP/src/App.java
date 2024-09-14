@@ -15,7 +15,6 @@ public class App {
         dic.Agregar("F", 5);
 
         NodoHuffman muestra = Huffman.crearArbol(dic);
-
-
+        
         }
 }
