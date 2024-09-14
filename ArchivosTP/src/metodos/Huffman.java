@@ -9,6 +9,8 @@ public class Huffman {
         NodoHuffman elemento = new NodoHuffman();
         elemento.probabilidad = prioridad;
         elemento.info = x;
+        elemento.hijoIzq = new NodoHuffman();
+        elemento.hijoDer = new NodoHuffman();
         return elemento;
     }
 

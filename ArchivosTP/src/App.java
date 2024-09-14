@@ -1,6 +1,7 @@
 import api.DiccionarioSimpleTDA;
 import impl.NodoHuffman;
 import metodos.Huffman;
+import metodos.metodosArbol;
 import impl.DiccionarioSimple;
 
 public class App {
@@ -16,5 +17,11 @@ public class App {
 
         NodoHuffman muestra = Huffman.crearArbol(dic);
         
+        metodosArbol.InOrder(muestra);
+        System.out.println(" ");
+        System.out.println("--------------------------------");
+        metodosArbol.PreOrder(muestra);
+
+
         }
 }
