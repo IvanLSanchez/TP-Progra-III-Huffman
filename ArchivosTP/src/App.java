@@ -22,6 +22,5 @@ public class App {
         System.out.println("--------------------------------");
         metodosArbol.PreOrder(muestra);
 
-
         }
 }
