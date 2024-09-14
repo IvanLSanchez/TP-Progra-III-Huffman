@@ -1,14 +1,15 @@
 package metodos;
 import impl.ColaPrioridadMinHeap;
+import impl.NodoHuffman;
 import impl.VP;
 
 public class Huffman {
 
     public static void main(String[] args) {        
-        VP[] conjuntoCaracteres = new VP[5];
+        NodoHuffman[] conjuntoCaracteres = new NodoHuffman[5];
 
         for (int i = 0; i < conjuntoCaracteres.length; i++) {
-            conjuntoCaracteres[i] = new VP();
+            conjuntoCaracteres[i] = new NodoHuffman();
         }
 
         conjuntoCaracteres[0].valor = 'A';
@@ -36,7 +37,7 @@ public class Huffman {
 
         for (int j = 0; j < n; j++) {
 
-            VP x = colaPrioridad.Primero();
+            NodoHuffman x = colaPrioridad.Primero();
 
             //armar el arbol enseñando
             
