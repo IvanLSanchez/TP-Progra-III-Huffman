@@ -1,13 +1,12 @@
 package impl;
 import api.ConjuntoTDA;
 import api.DiccionarioSimpleTDA;
-import impl.Conjunto;
 
 public class DiccionarioSimple implements DiccionarioSimpleTDA {
 
     class Elemento {
-        int clave;
-        int valor;
+        String clave;
+        float valor;
     }
 
     Elemento[] elementos;
@@ -29,9 +28,9 @@ public class DiccionarioSimple implements DiccionarioSimpleTDA {
         elementos[pos].valor = valor;
     }
 
-    private int Clave2Indice(int clave) {
+    private int Clave2Indice(String clave) {
         int i = cant - 1;
-        while (i >= 0 && elementos[i].clave != clave) {
+        while (i >= 0 && !(elementos[i].clave.equals(clave))) {
             i--;
         }
         return i;
