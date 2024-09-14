@@ -3,7 +3,6 @@ package impl;
 import api.HeapTDA;
 
 public class MinHeap implements HeapTDA{
-
     NodoHuffman[] valores;
     int cont, n;
 

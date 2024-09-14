@@ -3,7 +3,6 @@ import api.ConjuntoTDA;
 import api.DiccionarioSimpleTDA;
 
 public class DiccionarioSimple implements DiccionarioSimpleTDA {
-
     class Elemento {
         String clave;
         float valor;

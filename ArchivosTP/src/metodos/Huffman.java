@@ -7,7 +7,7 @@ import api.DiccionarioSimpleTDA;
 import api.HeapTDA;
 
 public class Huffman {
-    public static NodoHuffman crearHoja(String info, float prioridad){
+    public static NodoHuffman crearHojaArbolHuffman(String info, float prioridad){
         NodoHuffman elemento = new NodoHuffman();
         elemento.probabilidad = prioridad;
         elemento.info = info;
@@ -16,7 +16,7 @@ public class Huffman {
         return elemento;
     }
 
-    public static NodoHuffman fusionNodoHuffman (NodoHuffman x, NodoHuffman y){
+    public static NodoHuffman fusionNodosHuffman (NodoHuffman x, NodoHuffman y){
         NodoHuffman aux = new NodoHuffman();
         aux.hijoIzq = x;
         aux.hijoDer = y;
@@ -33,7 +33,7 @@ public class Huffman {
         ConjuntoTDA claves = diccionarioVP.Claves();
         while(!claves.ConjuntoVacio()){
             String eleccion = claves.Elegir();
-            colaPrioridadProbabilidadMin.Agregar(crearHoja(eleccion, diccionarioVP.Recuperar(eleccion)));
+            colaPrioridadProbabilidadMin.Agregar(crearHojaArbolHuffman(eleccion, diccionarioVP.Recuperar(eleccion)));
             claves.Sacar(eleccion);
             i++;
         }
@@ -44,7 +44,7 @@ public class Huffman {
             NodoHuffman x2 = colaPrioridadProbabilidadMin.Primero();
             colaPrioridadProbabilidadMin.Sacar();
 
-            colaPrioridadProbabilidadMin.Agregar(fusionNodoHuffman(x1, x2));
+            colaPrioridadProbabilidadMin.Agregar(fusionNodosHuffman(x1, x2));
         }
             
         return colaPrioridadProbabilidadMin.Primero();
