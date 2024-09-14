@@ -43,7 +43,7 @@ public class Huffman {
             NodoHuffman x2 = colaP.Primero();
             colaP.Desacolar();
 
-
+            colaP.AcolarPrioridad(fusionNodoHuffman(x1, x2));
         }
             
         
