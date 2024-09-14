@@ -1,14 +1,8 @@
 package metodos;
 import impl.ColaPrioridadMinHeap;
 import impl.NodoHuffman;
-import impl.VP;
-
-import java.util.Dictionary;
-
 import api.ConjuntoTDA;
 import api.DiccionarioSimpleTDA;
-import impl.Conjunto;
-import impl.DiccionarioSimple;
 
 public class Huffman {
     public static NodoHuffman crearHoja(String x, float prioridad){
@@ -27,7 +21,7 @@ public class Huffman {
         return aux;
     }
     
-    public static NodoHuffman crearArbol(DiccionarioSimple diccionarioVP){
+    public static NodoHuffman crearArbol(DiccionarioSimpleTDA diccionarioVP){
 
         ColaPrioridadMinHeap colaP  = new ColaPrioridadMinHeap();
         colaP.InicializarCola();
