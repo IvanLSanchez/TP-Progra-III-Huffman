@@ -4,7 +4,7 @@ import metodos.Huffman;
 
 public class App {
     public static void main(String[] args) {
-        NodoHuffmanHuffman[] conjuntoCaracteres = new NodoHuffman[5];
+        NodoHuffman[] conjuntoCaracteres = new NodoHuffman[5];
 
         for (int i = 0; i < conjuntoCaracteres.length; i++) {
             conjuntoCaracteres[i] = new NodoHuffman();
@@ -28,16 +28,6 @@ public class App {
 
         ColaPrioridadMinHeap colaPrioridad = new ColaPrioridadMinHeap();
         colaPrioridad.InicializarCola();
-
-        for (int i = 0; i < conjuntoCaracteres.length; i++) {
-            colaPrioridad.AcolarPrioridad(conjuntoCaracteres[i].valor , conjuntoCaracteres[i].prioridad);
-        }
-
-        for (int j = 0; j < n; j++) {
-
-            Huffman x = colaPrioridad.Primero();
-
-            //armar el arbol enseñando
 
         }
 }
