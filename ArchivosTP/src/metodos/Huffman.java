@@ -38,7 +38,7 @@ public class Huffman {
 
             VP x = colaPrioridad.Primero();
 
-            //armar el arbol
+            //armar el arbolhhh
             
         }
 
