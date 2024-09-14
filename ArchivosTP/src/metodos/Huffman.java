@@ -13,7 +13,7 @@ public class Huffman {
         NodoHuffman elemento = new NodoHuffman();
         elemento.probabilidad = prioridad;
         elemento.info = x;
-        return elemento
+        return elemento;
     }
 
     public static NodoHuffman fusionNodoHuffman (NodoHuffman x, NodoHuffman y){
