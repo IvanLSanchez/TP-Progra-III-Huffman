@@ -9,4 +9,5 @@ public interface ConjuntoTDA {
     int Elegir();
     void Sacar(int x);
     boolean Pertenece(int x);
+    ///a
 }
