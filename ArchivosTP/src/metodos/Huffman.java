@@ -7,7 +7,7 @@ import api.DiccionarioSimpleTDA;
 import api.HeapTDA;
 
 public class Huffman {
-    public static NodoHuffman crearHojaArbolHuffman(String info, float prioridad){
+    private static NodoHuffman crearHojaArbolHuffman(String info, float prioridad){
         NodoHuffman elemento = new NodoHuffman();
         elemento.probabilidad = prioridad;
         elemento.info = info;
@@ -16,7 +16,7 @@ public class Huffman {
         return elemento;
     }
 
-    public static NodoHuffman fusionNodosHuffman (NodoHuffman x, NodoHuffman y){
+    private static NodoHuffman fusionNodosHuffman (NodoHuffman x, NodoHuffman y){
         NodoHuffman aux = new NodoHuffman();
         aux.hijoIzq = x;
         aux.hijoDer = y;
@@ -50,8 +50,16 @@ public class Huffman {
         return colaPrioridadProbabilidadMin.Primero();
     }
 
-    public static String ObtenerCodigoLetra(){
-
+    private static String ObtenerCodigoLetra(NodoHuffman a,char valorBuscado, String codigo){
+        if(a.info.length()==1 || a.info.indexOf(valorBuscado)==-1){
+            return codigo;
+        }else{
+            if(a.hijoIzq.info.indexOf(valorBuscado) != -1){
+                return ObtenerCodigoLetra(a.hijoIzq, valorBuscado, codigo + "0");
+            }else{
+                return ObtenerCodigoLetra(a.hijoDer, valorBuscado, codigo + "1");
+            }
+        }
     }
 
     public static void ListarCodigo(NodoHuffman a, String codigo){
@@ -66,8 +74,16 @@ public class Huffman {
         if(a.hijoIzq.info==null && a.hijoDer.info==null){
             System.out.println("- " + a.info + ": " + codigo);
         }else{
-            Codificacion(a.hijoIzq, codigo + "0");
-            Codificacion(a.hijoDer, codigo + "1");
+            ListarCodigo(a.hijoIzq, codigo + "0");
+            ListarCodigo(a.hijoDer, codigo + "1");
         }
+    }
+
+    public static String EncriptarMensaje(String mensaje, NodoHuffman encriptador){
+        String codigo = "";
+        for(int i = 0; i<mensaje.length(); i++){
+            codigo = codigo + ObtenerCodigoLetra(encriptador , mensaje.charAt(i), "");
+        }
+        return codigo;
     }
 }

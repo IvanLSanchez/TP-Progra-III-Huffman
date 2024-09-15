@@ -42,6 +42,6 @@ public class App {
         
         System.out.println("Codigos");
         Huffman.ListarCodigo(muestra, "");
-        metodosArbol.InOrder(muestra);
+        System.out.println(Huffman.EncriptarMensaje("SOS", muestra));
         }
 }
