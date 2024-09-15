@@ -42,6 +42,6 @@ public class App {
         
         System.out.println("Codigos");
         Huffman.ListarCodigo(muestra, "");
-        System.out.println(Huffman.EncriptarMensaje("SOS", muestra));
+        System.out.println(Huffman.EncriptarMensaje("Aqui estan los 4 pasajes de regreso", muestra));
         }
 }

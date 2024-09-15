@@ -10,7 +10,7 @@ public class Huffman {
     private static NodoHuffman crearHojaArbolHuffman(String info, float prioridad){
         NodoHuffman elemento = new NodoHuffman();
         elemento.probabilidad = prioridad;
-        elemento.info = info;
+        elemento.info = info.toUpperCase();
         elemento.hijoIzq = new NodoHuffman();
         elemento.hijoDer = new NodoHuffman();
         return elemento;
@@ -80,9 +80,11 @@ public class Huffman {
     }
 
     public static String EncriptarMensaje(String mensaje, NodoHuffman encriptador){
+        mensaje = mensaje.toUpperCase();
         String codigo = "";
         for(int i = 0; i<mensaje.length(); i++){
-            codigo = codigo + ObtenerCodigoLetra(encriptador , mensaje.charAt(i), "");
+            String letraCodificada = ObtenerCodigoLetra(encriptador , mensaje.charAt(i), "");
+            codigo = letraCodificada!="" ? codigo+letraCodificada : codigo+mensaje.charAt(i);
         }
         return codigo;
     }
