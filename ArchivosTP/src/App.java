@@ -17,10 +17,8 @@ public class App {
 
         NodoHuffman muestra = Huffman.crearArbol(dic);
         
-        metodosArbol.InOrder(muestra);
-        System.out.println(" ");
-        System.out.println("--------------------------------");
-        metodosArbol.PreOrder(muestra);
+        System.out.println("Codigos");
+        metodosArbol.Codificacion(muestra, "");
 
         }
 }
