@@ -82,10 +82,28 @@ public class Huffman {
     public static String EncriptarMensaje(String mensaje, NodoHuffman encriptador){
         mensaje = mensaje.toUpperCase();
         String codigo = "";
-        for(int i = 0; i<mensaje.length(); i++){
+        for(int i=0; i<mensaje.length(); i++){
             String letraCodificada = ObtenerCodigoLetra(encriptador , mensaje.charAt(i), "");
             codigo = letraCodificada!="" ? codigo+letraCodificada : codigo+mensaje.charAt(i);
         }
         return codigo;
+    }
+
+    public static String DesencriptarMensajes(String mensaje, NodoHuffman desencriptador){
+        String mensajeDesencriptado = "";
+        NodoHuffman raizArbol = desencriptador;
+        for(int i=0; i<mensaje.length(); i++){
+            char trozoMensaje = mensaje.charAt(i);
+            if(trozoMensaje!='0' && trozoMensaje!='1'){
+                mensajeDesencriptado = mensajeDesencriptado + trozoMensaje;
+            }else{
+                desencriptador = trozoMensaje == '1'? desencriptador.hijoDer:desencriptador.hijoIzq;
+                if(desencriptador.info.length()==1){
+                    mensajeDesencriptado = mensajeDesencriptado + desencriptador.info;
+                    desencriptador = raizArbol;
+                }
+            }
+        }
+        return mensajeDesencriptado;
     }
 }
