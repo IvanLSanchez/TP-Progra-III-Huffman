@@ -1,6 +1,7 @@
 import api.DiccionarioSimpleTDA;
 import impl.NodoHuffman;
 import metodos.Huffman;
+import metodos.metodosArbol;
 import impl.DiccionarioSimple;
 
 public class App {
@@ -38,13 +39,16 @@ public class App {
 
 
         NodoHuffman muestra = Huffman.crearArbol(dic);
-        
-        System.out.println("Codigos:");
+        System.out.println("Arbol genererado:");
+        System.out.print("- Recorrido in order: ");
+        metodosArbol.InOrder(muestra);
+        System.out.print("\n- Recorrido pre order: ");
+        metodosArbol.PreOrder(muestra);
+        System.out.println("\n\nCodigos:");
         Huffman.ListarCodigo(muestra, "");
+        System.out.println("\nEjemplo: ");
         String mensajeSecreto = Huffman.EncriptarMensaje("Profe ponganos diez, mire que bien que quedo :)", muestra);
-        System.out.println();
-        System.out.println(mensajeSecreto);
-        System.out.println();
+        System.out.println(mensajeSecreto + "\n");
         System.out.println(Huffman.DesencriptarMensajes(mensajeSecreto, muestra));
         }
 }

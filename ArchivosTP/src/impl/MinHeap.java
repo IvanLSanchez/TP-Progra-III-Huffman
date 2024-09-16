@@ -76,7 +76,7 @@ public class MinHeap implements HeapTDA{
             if (indiceHjoD < cont && valores[indiceHjoD].probabilidad < valores[indiceAIntercambiar].probabilidad) {
                 indiceAIntercambiar = indiceHjoD;
             }
-            /*FIJAR*/
+            
             // Si el índice a intercambiar sigue siendo el mismo, la propiedad del heap se mantiene
             if (indiceAIntercambiar == i) {
                 break;
